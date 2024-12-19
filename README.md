@@ -6,10 +6,19 @@ This project demonstrates SQL data analysis on a local SQLite database. The data
 ## Database Used
 - **SQLite**: A lightweight, serverless relational database used for this project.
 
+## Acknowledgments
+- Dataset: [Student Depression Dataset from Kaggle](https://www.kaggle.com/datasets)
+- Special thanks to the Kaggle community for making the dataset available.
+
 ## Dataset
 - **Dataset Name**: Student Depression Dataset
 - **Source**: [Kaggle](https://www.kaggle.com/datasets)
 - **Description**: The dataset contains information about students' study hours, dietary habits, academic pressure, and depression status.
+
+## Project Requirements
+- SQLite (for the database)
+- Python (optional for running queries or scripts)
+- DB Browser for SQLite (optional for GUI-based interaction with the database)
 
 ## Installation Steps and Procedure
 
