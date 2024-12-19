@@ -63,8 +63,39 @@ Output
 Query 4: Filter records where a column value exceeds a threshold
 SELECT * FROM depression_data WHERE Dietary_Habits = 'Unhealthy';
 
+Output
+    Gender  Age  Academic_Pressure  Study_Satisfaction     Sleep_Duration  ... Suicidal_Thoughts Study_Hours  Financial_Stress  Family_History_Mental_Illness Depression
+0     Male   25                1.0                 3.0          5-6 hours  ...               Yes          10                 4                             No        Yes
+1     Male   23                1.0                 4.0  More than 8 hours  ...               Yes           7                 2                            Yes         No
+2     Male   19                4.0                 4.0          5-6 hours  ...               Yes           1                 4                            Yes        Yes
+3     Male   33                4.0                 3.0  Less than 5 hours  ...               Yes          10                 1                             No        Yes
+4     Male   24                2.0                 1.0          7-8 hours  ...               Yes          11                 5                             No        Yes
+..     ...  ...                ...                 ...                ...  ...               ...         ...               ...                            ...        ...
+164   Male   34                4.0                 1.0          7-8 hours  ...               Yes          11                 5                             No        Yes
+165   Male   29                3.0                 1.0          7-8 hours  ...               Yes           9                 3                            Yes        Yes
+166   Male   26                5.0                 2.0  More than 8 hours  ...                No           8                 3                             No        Yes
+167   Male   24                2.0                 1.0  Less than 5 hours  ...               Yes           8                 5                             No        Yes
+168   Male   18                5.0                 3.0  More than 8 hours  ...                No           6                 2                            Yes        Yes
+
+[169 rows x 11 columns]
+
 SELECT * FROM depression_data WHERE Study_Hours > 8;
-![query5](https://github.com/user-attachments/assets/1e057094-f306-4305-983b-03c3d19511ba)
+
+Output
+    Gender  Age  Academic_Pressure  Study_Satisfaction  ...  Study_Hours  Financial_Stress     Family_History_Mental_Illness  Depression
+0    Gender  Age  Academic Pressure  Study Satisfaction  ...  Study Hours  Financial Stress  Family History of Mental Illness  Depression
+1      Male   28                2.0                 4.0  ...            9                 2                               Yes          No
+2      Male   25                1.0                 3.0  ...           10                 4                                No         Yes
+3    Female   33                1.0                 4.0  ...           10                 3                                No          No
+4      Male   33                4.0                 3.0  ...           10                 1                                No         Yes
+..      ...  ...                ...                 ...  ...          ...               ...                               ...         ...
+169    Male   20                3.0                 4.0  ...            9                 5                               Yes         Yes
+170  Female   27                2.0                 3.0  ...           11                 2                               Yes          No
+171  Female   21                5.0                 1.0  ...           12                 3                                No         Yes
+172    Male   34                4.0                 1.0  ...           11                 5                                No         Yes
+173    Male   29                3.0                 1.0  ...            9                 3                               Yes         Yes
+
+[174 rows x 11 columns]
 
 
 Additional Queries : 
@@ -73,10 +104,36 @@ Additional Queries :
         FROM depression_data
         GROUP BY Depression;
 
+      Output
+         Depression  Percentage
+      0  Depression    0.198807
+      1          No   49.701789
+      2         Yes   50.099404
+
     2. Identify the age group with the highest academic pressure:
         SELECT Age, MAX(Academic_Pressure) AS Max_Pressure
         FROM depression_data
         GROUP BY Age
         ORDER BY Max_Pressure DESC;
+
+      Output
+         Age       Max_Pressure
+      0   Age  Academic Pressure
+      1    34                5.0
+      2    33                5.0
+      3    32                5.0
+      4    31                5.0
+      5    30                5.0
+      6    29                5.0
+      7    28                5.0
+      8    27                5.0
+      9    26                5.0
+      10   25                5.0
+      11   24                5.0
+      12   23                5.0
+      13   22                5.0
+      14   21                5.0
+      15   20                5.0
+      16   19                5.0
 
 
