@@ -42,57 +42,26 @@ Here are the SQL queries used for data analysis:
 ```sql
 SELECT COUNT(*) AS Total_Records FROM depression_data;
 
-Result:
-Screenshot: results/query1,query2,query3.png
-CSV: results/query1_results.csv
-
-### Query 2: Find the sum of study hours:
-SELECT SUM(Study_Hours) AS Total_Study_Hours FROM depression_data;
-
-Result:
-Screenshot: results/query1,query2,query3.png
-CSV: results/query3_result.csv
-
-### Query 3: Find the average of a numerical column
+Query 2: Find the average of a numerical column
 SELECT AVG(Academic_Pressure) AS Average_Academic_Pressure FROM depression_data;
 
-Result:
-Screenshot: results/query1,query2,query3.png
-CSV: results/query2_result.csv
+Query 3: Find the sum of a numerical column
+SELECT SUM(Study_Hours) AS Total_Study_Hours FROM depression_data;
 
-### Query 4: Filter records where a column value exceeds a threshold
+Query 4: Filter records where a column value exceeds a threshold
 SELECT * FROM depression_data WHERE Dietary_Habits = 'Unhealthy';
-
-Result:
-Screenshot: results/query4.png
-CSV: results/query4_results.csv
-
 SELECT * FROM depression_data WHERE Study_Hours > 8;
 
-Result:
-Screenshot: results/query4.png
-CSV: results/condition_based_results.csv
+Additional Queries : 
+    1. Find the percentage of students reporting depression:
+        SELECT Depression, COUNT(*) * 100.0 / (SELECT COUNT(*) FROM depression_data) AS Percentage
+        FROM depression_data
+        GROUP BY Depression;
 
-### Additional Examples (Optional)
-Find the percentage of students reporting depression:
-
-SELECT Depression, COUNT(*) * 100.0 / (SELECT COUNT(*) FROM depression_data) AS Percentage
-FROM depression_data
-GROUP BY Depression;
-
-Identify the age group with the highest academic pressure:
-SELECT Age, MAX(Academic_Pressure) AS Max_Pressure
-FROM depression_data
-GROUP BY Age
-ORDER BY Max_Pressure DESC;
+    2. Identify the age group with the highest academic pressure:
+        SELECT Age, MAX(Academic_Pressure) AS Max_Pressure
+        FROM depression_data
+        GROUP BY Age
+        ORDER BY Max_Pressure DESC;
 
 
-5. Commit and Push to GitHub
-After you’ve documented your queries and results:
-- Commit all files (i.e., `queries.sql`, `README.md`, `results/` folder) to your local Git repository.
-- Push the repository to GitHub.
-
-```bash
-git add .
-git commit -m "Add SQL queries and results"
-git push origin main
