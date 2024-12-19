@@ -41,16 +41,29 @@ Here are the SQL queries used for data analysis:
 ### Query 1: Count the total number of records in the dataset
 ```sql
 SELECT COUNT(*) AS Total_Records FROM depression_data;
+Output 
+    Total_Records
+0            503
 
 Query 2: Find the average of a numerical column
 SELECT AVG(Academic_Pressure) AS Average_Academic_Pressure FROM depression_data;
+Output
+    Average_Academic_Pressure
+0                   2.998012
 
 Query 3: Find the sum of a numerical column
 SELECT SUM(Study_Hours) AS Total_Study_Hours FROM depression_data;
+Output
+   Total_Study_Hours
+0             3215.0
 
 Query 4: Filter records where a column value exceeds a threshold
 SELECT * FROM depression_data WHERE Dietary_Habits = 'Unhealthy';
+![query4](https://github.com/user-attachments/assets/9258f750-ed8d-42cf-b6a3-f36566d51262)
+
 SELECT * FROM depression_data WHERE Study_Hours > 8;
+![query5](https://github.com/user-attachments/assets/c964c143-7903-42f2-9686-cd51ee310543)
+
 
 Additional Queries : 
     1. Find the percentage of students reporting depression:
