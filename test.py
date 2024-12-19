@@ -31,5 +31,12 @@ run_query("SELECT * FROM depression_data WHERE Dietary_Habits = 'Unhealthy';")
 print("\n5. Students who study more than 8 hours:")
 run_query("SELECT * FROM depression_data WHERE Study_Hours > 8;")
 
+# Additional Queries
+print("\n1. Additional query 1:")
+run_query(" SELECT Depression, COUNT(*) * 100.0 / (SELECT COUNT(*) FROM depression_data) AS Percentage FROM depression_data GROUP BY Depression;")
+
+print("\n2. Additional query 2:")
+run_query(" SELECT Age, MAX(Academic_Pressure) AS Max_Pressure FROM depression_data GROUP BY Age ORDER BY Max_Pressure DESC;")
+
 # Close the database connection
 connection.close()
