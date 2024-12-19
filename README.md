@@ -63,10 +63,8 @@ Output
 Query 4: Filter records where a column value exceeds a threshold
 SELECT * FROM depression_data WHERE Dietary_Habits = 'Unhealthy';
 
-
-
 SELECT * FROM depression_data WHERE Study_Hours > 8;
-
+![query5](https://github.com/user-attachments/assets/1e057094-f306-4305-983b-03c3d19511ba)
 
 
 Additional Queries : 
