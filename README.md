@@ -45,19 +45,6 @@ This project demonstrates SQL data analysis on a local SQLite database. The data
 
 ## Running Queries
 
-## Project Requirements
-- SQLite (for the database)
-- Python (optional for running queries or scripts)
-- DB Browser for SQLite (optional for GUI-based interaction with the database)
-
-## Future Improvements
-- Implement more advanced queries to explore relationships between depression and other factors.
-- Visualize the results using Python libraries like `matplotlib` or `seaborn`.
-
-## Acknowledgments
-- Dataset: [Student Depression Dataset from Kaggle](https://www.kaggle.com/datasets)
-- Special thanks to the Kaggle community for making the dataset available.
-
 Here are the SQL queries used for data analysis:
 
 ### Query 1: Count the total number of records in the dataset
